@@ -1,0 +1,130 @@
+$text-color: #000;
+$pink: #e31b5a;
+$green: #267a88;
+$grey: #797979;
+$grey-light: #e3e3e3;
+
+$body-width: 760px;
+
+
+/* Reset */
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote {
+  &:before, &:after {
+    content: '';
+    content: none; } }
+
+q {
+  &:before, &:after {
+    content: '';
+    content: none; } }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* Mixins */
+
+@mixin linear-gradient-b($args...) {
+  background-image: -o-linear-gradient($args); 
+  background-image: -moz-linear-gradient($args); 
+  background-image: -webkit-linear-gradient($args); 
+  background-image: linear-gradient($args); 
+ }
+ 
+
+/* Layout */
+body {
+  color: $text-color;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  @include linear-gradient-b(45deg, #C9C9C9, #FFFFFF);
+}
+
+.container {
+  max-width: $body-width;
+  margin: 0 auto;
+}
+
+.logo {
+  background: url(../../public/assets/logo.png) no-repeat;
+  display: block;
+}
+
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+
+  .logo {
+    height: 50px;
+    text-indent: -600%;
+    width: 250px;
+  }
+
+  address {
+    color: $green;
+    line-height: 11px;
+    text-align: right;
+    width: 30%;
+    strong {
+      color: $pink;
+    }
+  }
+}
+
+nav ul {
+  height: 50px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15px;
+  @include linear-gradient-b(to top,  #277986, #3e8a97, #539ba8, #67adb9, #7bbfcb);
+
+  li {
+    display: inline-block;
+    a {
+      color: #7cd7e6;
+      text-decoration: none;
+      font-size: 10px;
+      span {
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 11px;
+        background: -webkit-linear-gradient(#eee, #CCC);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;  
+        display: block;
+      }
+    }
+  }
+}
+
+.heading {
+  font-size: 20px;
+  font-style: italic;
+}
